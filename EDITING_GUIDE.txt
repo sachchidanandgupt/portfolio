@@ -1,0 +1,19 @@
+FINAL EDITING GUIDE — SACHCHIDANAND GUPT
+
+Your two uploaded photos are already included:
+images/portrait-01.jpg
+images/portrait-02.jpg
+
+Contact details already updated:
+WhatsApp: +91 98382 68841
+Instagram: @official_vishal_gupt
+Email: sachchidanandgupt9@gmail.com
+
+To add more photos:
+1. Upload a new image into the images folder.
+2. In index.html, copy an existing <article class="work"...> block.
+3. Change the image filename, category and title.
+4. Upload the updated files to GitHub and Commit changes.
+
+GitHub Pages:
+Keep index.html in the repository root and the images folder beside it.
