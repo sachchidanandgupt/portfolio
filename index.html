@@ -1,188 +1,412 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<meta name="theme-color" content="#070812" />
-<meta name="description" content="Sachchidanand Gupt — Photography, Videography, Editing and Graphic Design portfolio." />
-<title>Sachchidanand Gupt — Creative Portfolio</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#06110f">
+  <meta name="description" content="Sachchidanand Gupt — Visual Creator, Video Editor, Motion Graphics & Graphic Design">
+  <title>Sachchidanand Gupt — Creative Portfolio</title>
 
-:root{
-  --bg:#070812;
-  --ink:#f8f8ff;
-  --muted:#a8acc4;
-  --line:rgba(255,255,255,.13);
-  --glass:rgba(255,255,255,.075);
-  --glass2:rgba(255,255,255,.105);
-  --cyan:#63e7ff;
-  --violet:#9d72ff;
-  --pink:#ff5cc8;
-  --lime:#b8ff76;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  min-height:100vh;color:var(--ink);background:var(--bg);font-family:'DM Sans',Arial,sans-serif;overflow-x:hidden;
-}
-a{color:inherit;text-decoration:none}
-button{font:inherit}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-/* atmospheric background */
-body:before{
-  content:"";position:fixed;inset:0;z-index:-5;pointer-events:none;
-  background:
-    radial-gradient(circle at 15% 12%,rgba(99,231,255,.15),transparent 27%),
-    radial-gradient(circle at 88% 20%,rgba(255,92,200,.13),transparent 28%),
-    radial-gradient(circle at 55% 58%,rgba(157,114,255,.12),transparent 32%),
-    linear-gradient(180deg,#080914 0%,#090a16 55%,#05060b 100%);
-}
-body:after{
-  content:"";position:fixed;inset:auto 0 0;height:42vh;z-index:-4;opacity:.24;pointer-events:none;
-  background:
-    linear-gradient(150deg,transparent 0 19%,rgba(126,154,195,.38) 20%,transparent 36%),
-    linear-gradient(30deg,transparent 0 28%,rgba(87,105,143,.35) 29%,transparent 47%),
-    linear-gradient(160deg,transparent 0 49%,rgba(102,125,158,.3) 50%,transparent 67%),
-    linear-gradient(20deg,transparent 0 63%,rgba(64,82,118,.3) 64%,transparent 82%),
-    linear-gradient(180deg,transparent 0%,rgba(0,0,0,.82) 88%);
-  filter:blur(1px);transform:scale(1.05);
-}
-.noise{position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E")}
+  <style>
+    :root{
+      --bg:#030908;
+      --bg2:#061311;
+      --card:rgba(17,31,29,.48);
+      --card2:rgba(7,18,16,.68);
+      --line:rgba(160,255,232,.16);
+      --text:#f4fbf8;
+      --muted:#a5b9b4;
+      --accent:#36f2bb;
+      --accent2:#79ffe0;
+      --shadow:0 25px 80px rgba(0,0,0,.42);
+      --radius:28px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:"DM Sans",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 80% 10%,rgba(20,185,137,.16),transparent 28%),
+        radial-gradient(circle at 5% 55%,rgba(23,113,91,.13),transparent 28%),
+        linear-gradient(180deg,#020706 0%,#06110f 48%,#020605 100%);
+      overflow-x:hidden;
+    }
+    body:before{
+      content:"";
+      position:fixed;inset:0;pointer-events:none;z-index:-1;
+      background:
+        linear-gradient(115deg,transparent 20%,rgba(54,242,187,.035) 45%,transparent 70%),
+        repeating-linear-gradient(0deg,rgba(255,255,255,.012) 0 1px,transparent 1px 4px);
+    }
+    a{color:inherit;text-decoration:none}
+    img{display:block;width:100%}
+    .wrap{width:min(1180px,calc(100% - 32px));margin:auto}
+    .glass{
+      background:linear-gradient(135deg,rgba(255,255,255,.09),rgba(255,255,255,.025));
+      border:1px solid var(--line);
+      box-shadow:var(--shadow),inset 0 1px 0 rgba(255,255,255,.08);
+      backdrop-filter:blur(20px);
+      -webkit-backdrop-filter:blur(20px);
+    }
+    .nav{
+      position:fixed;top:14px;left:50%;transform:translateX(-50%);
+      width:min(1120px,calc(100% - 24px));z-index:50;
+      padding:12px 14px;border-radius:22px;
+      display:flex;align-items:center;justify-content:space-between;
+    }
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .brand-mark{
+      width:38px;height:38px;border-radius:12px;display:grid;place-items:center;
+      font-family:Georgia,serif;font-size:18px;
+      background:linear-gradient(145deg,#102a24,#06110f);
+      border:1px solid rgba(121,255,224,.25);
+      box-shadow:0 0 25px rgba(54,242,187,.12);
+    }
+    .brand-mark b{color:var(--accent)}
+    .navlinks{display:flex;gap:24px;align-items:center}
+    .navlinks a{font-size:13px;color:#c1d0cc;transition:.25s}
+    .navlinks a:hover,.navlinks a.active{color:var(--accent)}
+    .nav-cta,.btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;
+      border-radius:999px;padding:13px 19px;font-weight:700;font-size:13px;
+      transition:.25s;cursor:pointer
+    }
+    .nav-cta,.btn.primary{
+      background:linear-gradient(135deg,#4dffca,#16d9a4);
+      color:#03100c;box-shadow:0 10px 35px rgba(54,242,187,.22)
+    }
+    .btn.secondary{
+      border:1px solid rgba(196,255,243,.22);
+      background:rgba(255,255,255,.035);color:white
+    }
+    .btn:hover,.nav-cta:hover{transform:translateY(-2px);filter:brightness(1.05)}
+    .hero{min-height:800px;padding:170px 0 80px;position:relative;display:flex;align-items:center}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+    .eyebrow{font-size:12px;letter-spacing:4px;color:var(--accent);font-weight:700;margin-bottom:18px}
+    h1{
+      font-family:"Playfair Display",serif;
+      font-size:clamp(55px,7.5vw,98px);line-height:.88;letter-spacing:-3px;
+      max-width:750px
+    }
+    h1 em{color:var(--accent);font-weight:600}
+    .lead{color:var(--muted);font-size:18px;line-height:1.7;max-width:560px;margin:28px 0}
+    .tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}
+    .tool{
+      padding:9px 13px;border-radius:999px;background:rgba(255,255,255,.055);
+      border:1px solid rgba(255,255,255,.1);font-size:12px;color:#d5e2df
+    }
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-photo{
+      position:relative;min-height:610px;border-radius:42px;overflow:hidden;
+      border:1px solid rgba(168,255,235,.18);box-shadow:0 30px 90px rgba(0,0,0,.5)
+    }
+    .hero-photo img{height:100%;object-fit:cover;object-position:center}
+    .hero-photo:after{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.7) 100%)
+    }
+    .floating{
+      position:absolute;z-index:2;right:20px;bottom:25px;
+      width:180px;padding:18px;border-radius:22px;
+      background:rgba(4,15,13,.58);border:1px solid rgba(121,255,224,.22);
+      backdrop-filter:blur(18px)
+    }
+    .floating strong{font-family:"Playfair Display",serif;font-size:25px;display:block}
+    .floating span{font-size:11px;color:var(--muted)}
+    .orb{position:absolute;filter:blur(50px);border-radius:50%;pointer-events:none}
+    .orb.a{width:260px;height:260px;background:rgba(54,242,187,.12);left:-100px;top:20%}
+    .orb.b{width:220px;height:220px;background:rgba(54,242,187,.09);right:3%;top:35%}
 
-.container{width:min(1160px,92vw);margin:auto}
+    section{padding:105px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:35px}
+    .kicker{color:var(--accent);font-size:11px;letter-spacing:3px;font-weight:700;margin-bottom:10px}
+    h2{font-family:"Playfair Display",serif;font-size:clamp(38px,5vw,62px);line-height:1}
+    .section-note{color:var(--muted);max-width:340px;font-size:13px;line-height:1.7}
+    .about{
+      display:grid;grid-template-columns:360px 1fr;gap:34px;padding:22px;border-radius:34px
+    }
+    .about img{height:440px;object-fit:cover;border-radius:25px}
+    .about-copy{padding:35px 35px 35px 10px}
+    .about-copy h3{font-family:"Playfair Display",serif;font-size:38px;margin-bottom:15px}
+    .about-copy p{color:var(--muted);line-height:1.8;max-width:680px}
+    .chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:25px}
+    .chip{padding:9px 13px;border-radius:999px;background:rgba(54,242,187,.07);border:1px solid rgba(54,242,187,.16);font-size:12px}
 
-/* nav */
-.nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);width:min(1080px,92vw);z-index:20;display:flex;align-items:center;justify-content:space-between;padding:10px 12px 10px 18px;border:1px solid var(--line);border-radius:22px;background:rgba(9,10,20,.55);backdrop-filter:blur(22px);box-shadow:0 16px 60px rgba(0,0,0,.25)}
-.brand{font-family:'Space Grotesk',Arial,sans-serif;font-weight:700;letter-spacing:-.03em}.brand i{font-style:normal;color:var(--cyan)}
-.navlinks{display:flex;gap:8px}.navlinks a{font-size:13px;color:#cfd2e2;padding:9px 13px;border-radius:14px;transition:.25s}.navlinks a:hover{background:rgba(255,255,255,.08);color:#fff}
-.navcta{padding:10px 16px;border-radius:15px;background:linear-gradient(120deg,var(--cyan),#a8b8ff 48%,var(--pink));color:#070812;font-weight:700;font-size:13px}
+    .portfolio-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:18px}
+    .work{
+      position:relative;overflow:hidden;border-radius:27px;min-height:270px;
+      border:1px solid var(--line);background:#07110f
+    }
+    .work.big{grid-row:span 2;min-height:560px}
+    .work img{height:100%;object-fit:cover;transition:.5s}
+    .work:hover img{transform:scale(1.05)}
+    .work:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.82))}
+    .work-info{position:absolute;z-index:2;left:22px;right:22px;bottom:20px}
+    .work-info small{color:var(--accent);font-weight:700}
+    .work-info h3{font-family:"Playfair Display",serif;font-size:25px;margin-top:4px}
+    .mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 
-/* hero */
-.hero{min-height:100svh;display:grid;align-items:center;padding:120px 0 60px;position:relative;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}
-.hero-copy{position:relative;z-index:4;padding-bottom:25px}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:999px;color:#d9dbeb;font-size:12px;letter-spacing:.08em;text-transform:uppercase;backdrop-filter:blur(14px)}
-.dot{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 18px var(--lime);animation:pulse 1.8s infinite}
-.hero-title{font-family:'Space Grotesk',Arial,sans-serif;font-size:clamp(48px,7vw,94px);line-height:.92;letter-spacing:-.07em;margin:24px 0 18px;max-width:680px}
-.hero-title .gradient{background:linear-gradient(90deg,#fff 4%,var(--cyan) 35%,#c49cff 65%,var(--pink) 92%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero-title .name{display:block;font-size:.44em;letter-spacing:-.03em;line-height:1.15;color:#dfe2f2;margin-top:22px;font-weight:500}
-.hero-title .name strong{color:#fff;font-weight:700}
-.hero-desc{max-width:560px;color:var(--muted);font-size:17px;line-height:1.7}
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.btn{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:16px;padding:13px 17px;transition:.25s;backdrop-filter:blur(16px)}
-.btn.primary{border:0;background:linear-gradient(120deg,var(--cyan),#8f91ff 55%,var(--pink));color:#070812;font-weight:800}.btn:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(0,0,0,.25)}
+    .services{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .service{padding:25px;border-radius:25px;display:flex;gap:18px;align-items:center}
+    .icon{
+      width:56px;height:56px;flex:none;border-radius:17px;display:grid;place-items:center;
+      background:linear-gradient(145deg,rgba(54,242,187,.28),rgba(255,255,255,.04));
+      border:1px solid rgba(121,255,224,.18);font-size:23px
+    }
+    .service h3{font-size:17px;margin-bottom:5px}
+    .service p{font-size:12px;color:var(--muted);line-height:1.6}
 
-/* portrait */
-.hero-art{height:min(720px,76svh);min-height:500px;position:relative;display:flex;justify-content:center;align-items:flex-end}
-.portfolio-word{position:absolute;left:50%;top:45%;transform:translate(-50%,-50%);font-family:'Space Grotesk',Arial,sans-serif;font-size:clamp(74px,12vw,170px);font-weight:700;letter-spacing:.06em;white-space:nowrap;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.22);z-index:0;filter:drop-shadow(0 0 30px rgba(157,114,255,.15));user-select:none}
-.portfolio-word:before{content:"PORTFOLIO";position:absolute;inset:0;background:linear-gradient(90deg,var(--cyan),var(--violet),var(--pink),var(--lime));-webkit-background-clip:text;background-clip:text;color:transparent;opacity:.38;transform:translate(10px,9px);filter:blur(.2px)}
-.glow-orb{position:absolute;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(99,231,255,.22),rgba(157,114,255,.12) 40%,transparent 70%);filter:blur(12px);animation:float 6s ease-in-out infinite;z-index:0}
-.photo-wrap{position:relative;width:min(620px,100%);height:100%;display:flex;justify-content:center;align-items:flex-end;z-index:3;animation:heroIn 1.1s cubic-bezier(.2,.8,.2,1) both}
-.photo-wrap:before{content:"";position:absolute;width:68%;height:18%;bottom:2%;border-radius:50%;background:rgba(0,0,0,.55);filter:blur(28px);z-index:-1}
-.photo{width:auto;height:100%;max-width:100%;object-fit:contain;object-position:center bottom;display:block;filter:drop-shadow(0 35px 35px rgba(0,0,0,.42));animation:personFloat 5.5s ease-in-out infinite}
-.ring{position:absolute;width:74%;aspect-ratio:1;border:1px solid rgba(99,231,255,.16);border-radius:50%;z-index:-1;animation:spin 20s linear infinite}.ring:after{content:"";position:absolute;inset:12%;border:1px dashed rgba(255,92,200,.16);border-radius:50%}
-.badge{position:absolute;right:4%;top:18%;padding:11px 14px;border:1px solid var(--line);border-radius:16px;background:rgba(11,12,23,.6);backdrop-filter:blur(18px);font-size:12px;color:#dfe2ef;animation:float 4s ease-in-out infinite;z-index:5}.badge b{color:var(--lime)}
+    .contact{
+      display:grid;grid-template-columns:1fr .9fr;gap:25px;align-items:stretch
+    }
+    .contact-copy{padding:20px 5px}
+    .contact-copy h2{max-width:520px}
+    .contact-copy h2 em{color:var(--accent)}
+    .contact-copy p{color:var(--muted);line-height:1.8;max-width:500px;margin:20px 0}
+    .contact-card{padding:26px;border-radius:30px}
+    .field{display:flex;align-items:center;gap:10px;margin-bottom:12px;padding:14px 15px;border-radius:16px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09)}
+    .field input,.field textarea{width:100%;border:0;outline:0;background:transparent;color:white;font:inherit;font-size:13px}
+    .field textarea{min-height:100px;resize:vertical}
+    .socials{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+    .social{padding:10px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.12);font-size:12px;color:#d7e4e1}
+    footer{border-top:1px solid rgba(255,255,255,.08);padding:25px 0 90px;color:#81938f;font-size:12px}
+    .footer-row{display:flex;justify-content:space-between;gap:15px;align-items:center}
 
-/* sections */
-.section{padding:110px 0;position:relative}.section-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:30px}.kicker{font-size:12px;text-transform:uppercase;letter-spacing:.15em;color:#7e849e}.section h2{font-family:'Space Grotesk',Arial,sans-serif;font-size:clamp(38px,5vw,66px);letter-spacing:-.055em;margin-top:7px}.section-intro{max-width:470px;color:var(--muted);line-height:1.7}
-.glass-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.glass-card{border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.035));border-radius:24px;padding:24px;min-height:180px;backdrop-filter:blur(18px);box-shadow:inset 0 1px 0 rgba(255,255,255,.07);transition:.35s;position:relative;overflow:hidden}.glass-card:before{content:"";position:absolute;width:130px;height:130px;right:-55px;top:-55px;border-radius:50%;background:radial-gradient(circle,rgba(99,231,255,.18),transparent 65%)}.glass-card:hover{transform:translateY(-7px);border-color:rgba(255,255,255,.28)}.skill-no{font-size:12px;color:#777e98}.glass-card h3{font-family:'Space Grotesk';font-size:24px;margin:25px 0 8px}.glass-card p{color:var(--muted);font-size:13px;line-height:1.55}
+    .mobile-bar{
+      display:none;position:fixed;left:10px;right:10px;bottom:10px;z-index:60;
+      padding:8px;border-radius:20px;grid-template-columns:repeat(5,1fr)
+    }
+    .mobile-bar a{text-align:center;font-size:10px;color:#a7b8b4;padding:7px 2px}
+    .mobile-bar a span{display:block;font-size:16px;margin-bottom:3px}
+    .mobile-bar a.active{color:var(--accent)}
 
-.contact{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}.contact-panel{border:1px solid var(--line);border-radius:28px;background:linear-gradient(135deg,rgba(255,255,255,.095),rgba(255,255,255,.035));padding:34px;backdrop-filter:blur(20px)}.contact-panel h2{margin-bottom:16px}.contact-panel>p{color:var(--muted);line-height:1.7;max-width:600px}.contacts{display:grid;gap:11px;margin-top:25px}.contact-item{display:flex;align-items:center;gap:13px;padding:13px 14px;border:1px solid var(--line);border-radius:16px;background:rgba(0,0,0,.16);transition:.25s}.contact-item:hover{transform:translateX(5px);background:rgba(255,255,255,.07)}.icon{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(99,231,255,.2),rgba(255,92,200,.16));border:1px solid var(--line);font-size:18px}.contact-item small{display:block;color:#777e98;margin-bottom:2px}.contact-item span{font-size:14px;color:#e7e8f2;word-break:break-word}
-.contact-art{min-height:360px;display:grid;place-items:center;position:relative;overflow:hidden}.contact-art .big{font-family:'Space Grotesk';font-size:clamp(50px,8vw,110px);font-weight:700;line-height:.85;text-align:center;letter-spacing:-.07em;background:linear-gradient(90deg,var(--cyan),var(--violet),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent;animation:hue 7s linear infinite}.contact-art .mini{margin-top:20px;text-align:center;color:#8f95ad;font-size:12px;letter-spacing:.18em;text-transform:uppercase}
-.footer{padding:35px 0 45px;border-top:1px solid var(--line);color:#777e98;font-size:12px;display:flex;justify-content:space-between;gap:20px}.footer strong{color:#d9dbea}
-
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}.reveal.show{opacity:1;transform:none}
-@keyframes heroIn{from{opacity:0;transform:translateY(35px) scale(.97)}to{opacity:1;transform:none}}
-@keyframes personFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-10px) rotate(.35deg)}}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(.65);opacity:.55}}
-@keyframes spin{to{transform:rotate(360deg)}}
-@keyframes hue{0%{filter:hue-rotate(0)}100%{filter:hue-rotate(360deg)}}
-
-@media (max-width:900px){
-  .navlinks{display:none}.hero{padding-top:105px}.hero-grid{grid-template-columns:1fr}.hero-copy{order:1;text-align:center}.hero-desc{margin:auto}.hero-actions{justify-content:center}.hero-art{order:0;height:62svh;min-height:430px}.portfolio-word{top:43%;font-size:clamp(58px,16vw,115px)}.photo{height:100%}.badge{right:5%;top:12%}.section{padding:80px 0}.glass-grid{grid-template-columns:1fr 1fr}.contact{grid-template-columns:1fr}
-}
-@media (max-width:560px){
-  .nav{top:10px;border-radius:17px}.navcta{padding:9px 12px}.hero{min-height:auto;padding:95px 0 45px}.hero-art{height:58svh;min-height:390px}.hero-title{font-size:clamp(45px,14vw,70px)}.hero-desc{font-size:15px}.portfolio-word{font-size:clamp(46px,14vw,80px);letter-spacing:.025em}.badge{font-size:10px;padding:8px 10px}.glass-grid{grid-template-columns:1fr}.glass-card{min-height:155px}.section-head{display:block}.section-intro{margin-top:14px}.contact-panel{padding:23px}.footer{display:block}.footer span{display:block;margin-top:8px}
-}
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
-</style>
+    @media(max-width:850px){
+      .nav{top:8px}
+      .navlinks,.nav-cta{display:none}
+      .hero{padding:120px 0 60px;min-height:auto}
+      .hero-grid,.contact,.portfolio-grid{grid-template-columns:1fr}
+      .hero-grid{gap:28px}
+      .hero-photo{min-height:540px;order:-1}
+      .hero-copy h1{font-size:60px}
+      .about{grid-template-columns:1fr}
+      .about img{height:360px}
+      .about-copy{padding:12px 12px 24px}
+      .work.big{min-height:470px}
+      .services{grid-template-columns:1fr}
+      .section-head{display:block}
+      .section-note{margin-top:15px}
+      .mobile-bar{display:grid}
+      footer{padding-bottom:100px}
+    }
+    @media(max-width:520px){
+      .wrap{width:min(100% - 20px,1180px)}
+      section{padding:75px 0}
+      h1{font-size:52px;letter-spacing:-2px}
+      .lead{font-size:15px}
+      .hero-photo{min-height:500px;border-radius:30px}
+      .about{padding:12px;border-radius:27px}
+      .about img{height:310px;border-radius:20px}
+      .about-copy h3{font-size:32px}
+      .portfolio-grid{gap:12px}
+      .mini-grid{gap:12px}
+      .work,.work.big{min-height:260px;border-radius:21px}
+      .work.big{min-height:390px}
+      .service{padding:18px}
+      .footer-row{flex-direction:column;align-items:flex-start}
+    }
+  </style>
 </head>
+
 <body>
-<div class="noise"></div>
+  <div class="orb a"></div><div class="orb b"></div>
 
-<header class="nav">
-  <a class="brand" href="#top">Sachchidanand<span>.<i>creative</i></span></a>
-  <nav class="navlinks" aria-label="Main navigation">
-    <a href="#skills">Skills</a><a href="#contact">Contact</a>
+  <nav class="nav glass">
+    <a href="#home" class="brand">
+      <span class="brand-mark">S<b>G</b></span>
+      <span>Sachchidanand Gupt</span>
+    </a>
+    <div class="navlinks">
+      <a class="active" href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#services">What I Do</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="#contact">Hire Me ↗</a>
   </nav>
-  <a class="navcta" href="tel:+919838268841">Let's talk</a>
-</header>
 
-<main id="top">
-<section class="hero">
-  <div class="container hero-grid">
-    <div class="hero-copy reveal">
-      <div class="eyebrow"><span class="dot"></span> Available for creative work</div>
-      <h1 class="hero-title"><span class="gradient">Visuals<br>with a point.</span><span class="name">I’m <strong>Sachchidanand Gupt</strong> — photographer, editor &amp; graphic designer.</span></h1>
-      <p class="hero-desc">I create cinematic photographs, videos, edits and graphic visuals with a clean, modern direction and a little futuristic energy.</p>
-      <div class="hero-actions">
-        <a class="btn primary" href="#contact">Get in touch ↗</a>
-        <a class="btn" href="#skills">Explore skills ↓</a>
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">VISUAL CREATOR • VIDEO EDITOR</div>
+          <h1>Sachchidanand<br><em>Gupt</em></h1>
+          <p class="lead">I turn ideas into cinematic visuals through <b>video editing, motion graphics, photography and design.</b></p>
+          <div class="tools">
+            <span class="tool">✦ Premiere Pro</span>
+            <span class="tool">✦ After Effects</span>
+            <span class="tool">✦ Photoshop</span>
+          </div>
+          <div class="hero-actions">
+            <a class="btn primary" href="#portfolio">View Portfolio ↗</a>
+            <a class="btn secondary" href="#contact">Contact Me ↗</a>
+          </div>
+        </div>
+
+        <div class="hero-photo">
+          <img src="portrait-01.jpg" alt="Sachchidanand Gupt">
+          <div class="floating">
+            <strong>Create.<br>Edit.<br>Animate.</strong>
+            <span>Visual storytelling with a modern touch.</span>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="hero-art">
-      <div class="portfolio-word" aria-hidden="true">P O R T F O L I O</div>
-      <div class="glow-orb"></div><div class="ring"></div>
-      <div class="badge">Creative mode <b>ON</b> ✦</div>
-      <div class="photo-wrap">
-        <img class="photo" src="hero-person-enhanced.png" alt="Sachchidanand Gupt" onerror="this.onerror=null;this.src='hero-person-enhanced (1)(2).png';" />
+    <section id="about">
+      <div class="wrap">
+        <div class="about glass">
+          <img src="portrait-02.jpg" alt="Sachchidanand Gupt portrait">
+          <div class="about-copy">
+            <div class="kicker">ABOUT ME</div>
+            <h3>Hi, I'm Sachchidanand Gupt</h3>
+            <p>I’m a creative visual artist focused on making clean, cinematic and engaging content. I enjoy turning simple ideas into visuals that feel modern, emotional and memorable.</p>
+            <div class="chips">
+              <span class="chip">Video Editing</span>
+              <span class="chip">Motion Graphics</span>
+              <span class="chip">Photography</span>
+              <span class="chip">Graphic Design</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section class="section" id="skills">
-  <div class="container">
-    <div class="section-head reveal">
-      <div><div class="kicker">01 / SOFTWARE SKILLS</div><h2>Tools I use.</h2></div>
-      <p class="section-intro">A focused creative toolkit for editing, compositing, photo finishing and visual design.</p>
-    </div>
-    <div class="glass-grid">
-      <article class="glass-card reveal"><span class="skill-no">01</span><h3>Premiere Pro</h3><p>Cinematic cuts, reels, pacing, transitions and polished video edits.</p></article>
-      <article class="glass-card reveal"><span class="skill-no">02</span><h3>After Effects</h3><p>Motion graphics, visual effects, titles and animated compositions.</p></article>
-      <article class="glass-card reveal"><span class="skill-no">03</span><h3>Photoshop</h3><p>Photo retouching, compositing, colour work and creative manipulation.</p></article>
-      <article class="glass-card reveal"><span class="skill-no">04</span><h3>Illustrator</h3><p>Clean vector graphics, posters, branding elements and visual assets.</p></article>
-    </div>
-  </div>
-</section>
+    <section id="portfolio">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="kicker">MY WORKS</div>
+            <h2>Portfolio</h2>
+          </div>
+          <p class="section-note">A selection of visual work, experiments and creative projects.</p>
+        </div>
 
-<section class="section" id="contact">
-  <div class="container contact">
-    <div class="contact-panel reveal">
-      <div class="kicker">02 / CONTACT</div>
-      <h2>Let’s create something.</h2>
-      <p>For photography, videography, editing or graphic design work, reach out directly.</p>
-      <div class="contacts">
-        <a class="contact-item" href="tel:+919838268841"><span class="icon">☎</span><div><small>Phone</small><span>+91 98382 68841</span></div></a>
-        <a class="contact-item" href="mailto:sachchidanandgupt9@gmail.com"><span class="icon">✉</span><div><small>Email</small><span>sachchidanandgupt9@gmail.com</span></div></a>
-        <a class="contact-item" href="https://instagram.com/official_vishal_gupt" target="_blank" rel="noopener"><span class="icon">◎</span><div><small>Instagram</small><span>@official_vishal_gupt</span></div></a>
+        <div class="portfolio-grid">
+          <article class="work big">
+            <img src="portrait-01.jpg" alt="Photography project">
+            <div class="work-info">
+              <small>01 • PHOTOGRAPHY</small>
+              <h3>Visuals with a point of view.</h3>
+            </div>
+          </article>
+
+          <div class="mini-grid">
+            <article class="work">
+              <img src="portrait-02.jpg" alt="Outdoor portrait">
+              <div class="work-info"><small>02 • PORTRAIT</small><h3>Outdoor Portrait</h3></div>
+            </article>
+            <article class="work">
+              <div style="height:100%;display:grid;place-items:center;font-family:'Playfair Display',serif;font-size:27px;color:#bdfbed;background:radial-gradient(circle at 50% 35%,rgba(54,242,187,.18),transparent 45%)">NEXT<br><span style="color:var(--accent)">PROJECT</span></div>
+              <div class="work-info"><small>03 • MOTION</small><h3>Coming Soon</h3></div>
+            </article>
+            <article class="work">
+              <div style="height:100%;display:grid;place-items:center;font-family:'Playfair Display',serif;font-size:25px;background:linear-gradient(135deg,#10241f,#050908)">GOOD<br><span style="color:var(--accent)">VIBES</span></div>
+              <div class="work-info"><small>04 • DESIGN</small><h3>Social Media Visual</h3></div>
+            </article>
+            <article class="work">
+              <div style="height:100%;display:grid;place-items:center;font-family:'Playfair Display',serif;font-size:32px;background:radial-gradient(circle,rgba(54,242,187,.2),transparent 55%)">SG</div>
+              <div class="work-info"><small>05 • BRANDING</small><h3>Logo Concept</h3></div>
+            </article>
+          </div>
+        </div>
       </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="kicker">SERVICES</div>
+            <h2>What I Do</h2>
+          </div>
+          <p class="section-note">Turning your ideas into polished visual content.</p>
+        </div>
+
+        <div class="services">
+          <article class="service glass"><div class="icon">🎬</div><div><h3>Video Editing</h3><p>YouTube, reels, short-form videos, cinematic edits and storytelling.</p></div></article>
+          <article class="service glass"><div class="icon">✦</div><div><h3>Motion Graphics</h3><p>Titles, transitions, animated text and engaging visual effects.</p></div></article>
+          <article class="service glass"><div class="icon">✎</div><div><h3>Graphic Design</h3><p>Posters, thumbnails, social media creatives and visual concepts.</p></div></article>
+          <article class="service glass"><div class="icon">◉</div><div><h3>Photography</h3><p>Portraits and creative outdoor photography with a cinematic feel.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap contact">
+        <div class="contact-copy">
+          <div class="kicker">GET IN TOUCH</div>
+          <h2>Let's create something <em>amazing.</em></h2>
+          <p>Have a project in mind? Send me a message. I’d love to hear your idea and help turn it into something visual.</p>
+          <a class="btn primary" href="https://wa.me/919838268841" target="_blank">WhatsApp Me ↗</a>
+          <div class="socials">
+            <a class="social" href="mailto:sachchidanandgupt9@gmail.com">✉ Email</a>
+            <a class="social" href="https://instagram.com/official_vishal_gupt" target="_blank">◎ Instagram</a>
+          </div>
+        </div>
+
+        <form class="contact-card glass" onsubmit="sendWhatsApp(event)">
+          <div class="field">👤 <input id="name" required placeholder="Your Name"></div>
+          <div class="field">✉ <input id="email" type="email" placeholder="Your Email"></div>
+          <div class="field">💬 <textarea id="message" required placeholder="Tell me about your project..."></textarea></div>
+          <button class="btn primary" type="submit" style="border:0;width:100%">Send on WhatsApp ↗</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <div class="brand"><span class="brand-mark">S<b>G</b></span><span>Sachchidanand Gupt</span></div>
+      <span>© <span id="year"></span> Sachchidanand Gupt • All rights reserved.</span>
     </div>
-    <div class="contact-panel contact-art reveal">
-      <div><div class="big">MAKE<br>IT<br>VISUAL.</div><div class="mini">Photography · Video · Edit · Design</div></div>
-    </div>
+  </footer>
+
+  <div class="mobile-bar glass">
+    <a class="active" href="#home"><span>⌂</span>Home</a>
+    <a href="#about"><span>◉</span>About</a>
+    <a href="#portfolio"><span>▦</span>Work</a>
+    <a href="#services"><span>✦</span>Services</a>
+    <a href="#contact"><span>✉</span>Contact</a>
   </div>
-</section>
-</main>
 
-<footer class="container footer"><strong>Sachchidanand Gupt</strong><span>© 2026 — Crafted with motion &amp; imagination.</span></footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-<script>
-const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})},{threshold:.12});
-document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4)*70+'ms';observer.observe(el)});
-</script>
+    function sendWhatsApp(e){
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+      const text = `Hello Sachchidanand,%0A%0AName: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0AProject: ${encodeURIComponent(message)}`;
+      window.open(`https://wa.me/919838268841?text=${text}`, "_blank");
+    }
+
+    const sections = document.querySelectorAll("section[id]");
+    const links = document.querySelectorAll(".navlinks a, .mobile-bar a");
+    const observer = new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          links.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+entry.target.id));
+        }
+      });
+    },{rootMargin:"-35% 0px -55% 0px"});
+    sections.forEach(s=>observer.observe(s));
+  </script>
 </body>
 </html>
