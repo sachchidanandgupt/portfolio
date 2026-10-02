@@ -1,22 +1,538 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#060606" />
-    <title>Sachchidanand Gupt - Visual Creator & Video Editor</title>
-    <meta name="description" content="Official creative portfolio of Sachchidanand Gupt — Video Editor, Motion Graphics Designer & Visual Storyteller. Connect for video editing, social media reels, and visual collaborations." />
-    <meta property="og:title" content="Sachchidanand Gupt - Visual Creator & Video Editor" />
-    <meta property="og:description" content="Official creative portfolio of Sachchidanand Gupt — Video Editor, Motion Graphics Designer & Visual Storyteller. Connect for video editing, social media reels, and visual collaborations." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="./assets/index-poHjtcQj.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BAuCnGx9.css">
-  </head>
-  <body class="bg-[#050505] text-[#fbfbfb] selection:bg-[#ff5722]/40 selection:text-[#ff7a45] antialiased overflow-x-hidden">
-    <div id="root"></div>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#060606" />
+  <title>Sachchidanand Gupt - Visual Creator & Video Editor</title>
+  <meta name="description" content="Official creative portfolio of Sachchidanand Gupt — Video Editor, Motion Graphics Designer & Visual Storyteller." />
+
+  <!-- Google Fonts: Syne & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            display: ['Syne', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #060504;
+      color: #fbfbfb;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .font-display {
+      font-family: 'Syne', sans-serif;
+      letter-spacing: -0.035em;
+    }
+    .hero-sunset-gradient {
+      background: radial-gradient(circle at 50% 36%, #ff4b1f 0%, #e63900 35%, #961a00 70%, #150300 100%);
+    }
+    .hero-screen-glow {
+      box-shadow: 0 30px 100px -20px rgba(255, 75, 31, 0.4), 0 0 50px rgba(255, 90, 30, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+    }
+    .liquid-glass {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+    .liquid-glass-orange {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 87, 34, 0.08) 100%);
+      border: 1px solid rgba(255, 138, 80, 0.3);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      box-shadow: 0 16px 40px -10px rgba(255, 87, 34, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+    }
+    .liquid-glass-card {
+      background: linear-gradient(145deg, rgba(20, 10, 8, 0.75) 0%, rgba(6, 5, 4, 0.88) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    }
+    @keyframes gentleFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes badgeFloat1 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+    @keyframes badgeFloat2 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes liquidPulse {
+      0%, 100% { transform: scale(1); opacity: 0.35; }
+      50% { transform: scale(1.08); opacity: 0.55; }
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-float-gentle { animation: gentleFloat 5s ease-in-out infinite; }
+    .animate-badge-1 { animation: badgeFloat1 4.5s ease-in-out infinite; }
+    .animate-badge-2 { animation: badgeFloat2 5.5s ease-in-out infinite; }
+    .animate-liquid-pulse { animation: liquidPulse 4s ease-in-out infinite; }
+    .animate-marquee { animation: marquee 28s linear infinite; }
+    .animate-marquee:hover { animation-play-state: paused; }
+  </style>
+</head>
+<body class="bg-[#060504] text-[#fbfbfb] antialiased selection:bg-[#ff5722]/40 selection:text-[#ff7a45]">
+
+  <!-- Ambient Particles Canvas -->
+  <canvas id="ambient-canvas" class="fixed inset-0 pointer-events-none z-0 w-full h-full"></canvas>
+
+  <!-- Sticky Liquid Glass Navigation -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-40 py-3 md:py-4 px-4 sm:px-6 md:px-8 transition-all duration-300">
+    <div class="max-w-5xl mx-auto rounded-full px-5 py-2.5 liquid-glass-card border border-white/20 shadow-2xl flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-2.5 text-xs font-bold text-white hover:text-[#ff8a50] transition-colors">
+        <div class="w-7 h-7 rounded-xl liquid-glass-orange flex items-center justify-center text-xs font-black text-white">✦</div>
+        <span class="font-display font-extrabold text-sm tracking-wider">SACHCHIDANAND GUPT</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-xs font-semibold tracking-wider uppercase text-white/80">
+        <a href="#home" class="hover:text-white transition-colors">Home</a>
+        <a href="#about" class="hover:text-white transition-colors">About</a>
+        <a href="#portfolio" class="hover:text-white transition-colors">Projects</a>
+        <a href="#services" class="hover:text-white transition-colors">Capabilities</a>
+        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+      </nav>
+      <a href="https://wa.me/919893268841" target="_blank" class="px-4 py-2 rounded-full text-xs font-bold text-[#0d0402] bg-white hover:bg-neutral-100 transition-all shadow-lg hover:shadow-orange-500/20">
+        Let's Collaborate ↗
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="relative z-10">
+    <!-- Hero Section (White & Orange Gradient + Liquid Glass) -->
+    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 px-3 sm:px-6 md:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="relative rounded-[32px] sm:rounded-[42px] overflow-hidden border border-white/20 hero-screen-glow hero-sunset-gradient">
+          <div class="absolute inset-0 bg-gradient-to-tr from-white/[0.08] via-transparent to-orange-500/[0.05] pointer-events-none"></div>
+
+          <!-- Camera Notch -->
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-28 sm:w-36 h-4 bg-black/60 backdrop-blur-xl rounded-b-2xl border-x border-b border-white/15 z-30 hidden sm:flex items-center justify-center">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#ff784e] animate-pulse"></span>
+          </div>
+
+          <!-- Canvas Top Bar -->
+          <div class="relative z-20 flex items-center justify-between px-6 sm:px-10 pt-6 sm:pt-8 pb-4">
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-xl liquid-glass-orange flex items-center justify-center text-sm font-bold text-white">✦</div>
+              <span class="text-xs uppercase tracking-widest font-bold text-white hidden sm:inline-block">Visual Creator</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-7 text-xs font-semibold tracking-wider uppercase text-white/85">
+              <a href="#home" class="hover:text-white transition-colors">Home</a>
+              <a href="#about" class="hover:text-white transition-colors">About</a>
+              <a href="#portfolio" class="hover:text-white transition-colors">Projects</a>
+              <a href="#services" class="hover:text-white transition-colors">Capabilities</a>
+              <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+            </nav>
+            <a href="#contact" class="px-5 py-2.5 rounded-full text-xs font-bold text-[#0d0402] bg-white hover:bg-neutral-100 shadow-xl transition-all">
+              Let's Collaborate ↗
+            </a>
+          </div>
+
+          <!-- Hero Body Grid -->
+          <div style="position: relative; z-index: 10; padding: 1rem 2rem 2rem 2rem;">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[460px] sm:min-h-[520px]">
+              
+              <!-- Left: Name & Title -->
+              <div class="lg:col-span-4 flex flex-col justify-center text-left order-2 lg:order-1">
+                <div class="inline-flex items-center gap-2 mb-2">
+                  <span class="px-2.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[11px] font-bold uppercase tracking-wider text-white">
+                    Hey, I'm
+                  </span>
+                </div>
+                <h1 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[68px] font-extrabold text-white tracking-tight leading-[0.92] drop-shadow-lg">
+                  Sachchidanand <br />
+                  <span class="bg-gradient-to-r from-white via-orange-100 to-amber-200 bg-clip-text text-transparent drop-shadow-xl">
+                    Gupt
+                  </span>
+                </h1>
+                <div class="mt-4 inline-flex items-center gap-2 text-sm sm:text-base font-semibold text-white/95">
+                  <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+                  <span>Visual Creator & Video Editor</span>
+                </div>
+                <div class="mt-6 flex flex-wrap items-center gap-3">
+                  <a href="#contact" class="px-6 py-3 rounded-full text-xs font-bold text-white bg-black/40 hover:bg-black/60 border border-white/25 transition-all backdrop-blur-md shadow-lg">
+                    ✨ Get In Touch ↗
+                  </a>
+                  <a href="#portfolio" class="px-5 py-3 rounded-full text-xs font-semibold text-white/90 hover:text-white bg-white/10 hover:bg-white/15 border border-white/15 transition-all">
+                    View Projects ↓
+                  </a>
+                </div>
+              </div>
+
+              <!-- Center: Transparent Photo Cutout (No Background) -->
+              <div class="lg:col-span-4 flex justify-center items-end order-1 lg:order-2 relative">
+                <div class="relative w-full max-w-[290px] sm:max-w-[340px] lg:max-w-[390px] flex justify-center">
+                  <div class="absolute -inset-4 rounded-full bg-gradient-to-t from-[#ff4b1f] via-[#ff784e]/70 to-white/40 blur-3xl opacity-60 animate-liquid-pulse pointer-events-none"></div>
+
+                  <!-- Floating Badges -->
+                  <div class="absolute -left-6 top-16 hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full liquid-glass border border-white/30 text-[11px] font-bold text-white shadow-xl z-20 animate-badge-1">
+                    <span class="w-2 h-2 rounded-full bg-[#ff784e] animate-ping"></span>
+                    <span>4K Color Science</span>
+                  </div>
+                  <div class="absolute -right-6 top-32 hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full liquid-glass border border-white/30 text-[11px] font-bold text-white shadow-xl z-20 animate-badge-2">
+                    <span class="text-[#ff8a50]">⚡</span>
+                    <span>Retention Cuts</span>
+                  </div>
+
+                  <!-- Photo with gentle float -->
+                  <div class="relative z-10 animate-float-gentle">
+                    <img src="./photo_nobg.png" onerror="this.onerror=null; this.src='./photo.png';" alt="Sachchidanand Gupt" class="w-full h-auto max-h-[460px] sm:max-h-[520px] object-contain mx-auto drop-shadow-[0_20px_35px_rgba(0,0,0,0.7)]" style="-webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%); mask-image: linear-gradient(to bottom, black 85%, transparent 100%);" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right: Editorial Statement -->
+              <div class="lg:col-span-4 flex flex-col justify-center text-left order-3">
+                <div class="max-w-sm lg:ml-auto p-5 sm:p-6 rounded-2xl liquid-glass border border-white/20 shadow-2xl">
+                  <h3 class="font-display text-xl sm:text-2xl font-bold text-white leading-tight">
+                    Great visuals should feel unforgettable.
+                  </h3>
+                  <p class="mt-2.5 text-xs sm:text-sm text-white/85 leading-relaxed">
+                    From pacing to color science, I craft cinematic reels, YouTube videos, and dynamic motion graphics that captivate and convert.
+                  </p>
+                  <div class="mt-5 pt-4 border-t border-white/15 flex items-center justify-between text-xs text-white/80">
+                    <span class="font-mono text-[11px] text-white">4K Master • 60 FPS</span>
+                    <span class="text-white/40">·</span>
+                    <span class="text-[#ffaa75] font-semibold">Premiere & AE</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom 4 Focus Areas -->
+            <div class="mt-8 pt-6 border-t border-white/15 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 text-xs font-semibold text-white">
+              <div class="flex items-center gap-2.5 p-3 rounded-2xl liquid-glass border border-white/20">
+                <span class="w-2 h-2 rounded-full bg-white shrink-0 shadow-sm shadow-white animate-pulse"></span>
+                <span class="font-mono text-white/60 text-[11px]">01</span>
+                <span class="truncate">Video Editing</span>
+              </div>
+              <div class="flex items-center gap-2.5 p-3 rounded-2xl liquid-glass border border-white/20">
+                <span class="w-2 h-2 rounded-full bg-white shrink-0 shadow-sm shadow-white animate-pulse"></span>
+                <span class="font-mono text-white/60 text-[11px]">02</span>
+                <span class="truncate">Motion Graphics</span>
+              </div>
+              <div class="flex items-center gap-2.5 p-3 rounded-2xl liquid-glass border border-white/20">
+                <span class="w-2 h-2 rounded-full bg-white shrink-0 shadow-sm shadow-white animate-pulse"></span>
+                <span class="font-mono text-white/60 text-[11px]">03</span>
+                <span class="truncate">Color Grading</span>
+              </div>
+              <div class="flex items-center gap-2.5 p-3 rounded-2xl liquid-glass border border-white/20">
+                <span class="w-2 h-2 rounded-full bg-white shrink-0 shadow-sm shadow-white animate-pulse"></span>
+                <span class="font-mono text-white/60 text-[11px]">04</span>
+                <span class="truncate">Visual Direction</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marquee Ticker -->
+    <div class="relative w-full overflow-hidden border-y border-white/10 bg-[#090807]/80 py-3.5 backdrop-blur-md">
+      <div class="flex w-max animate-marquee space-x-8 text-xs sm:text-sm font-medium tracking-wider uppercase text-[#a5b9b4]">
+        <span class="text-white">Video Editing <span class="text-[#ff5722]">✦</span></span>
+        <span class="text-white">Motion Graphics <span class="text-[#ff5722]">✦</span></span>
+        <span class="text-white">Cinematic Color Grading <span class="text-[#ff5722]">✦</span></span>
+        <span class="text-white">Adobe Premiere Pro <span class="text-[#ff5722]">✦</span></span>
+        <span class="text-white">After Effects <span class="text-[#ff5722]">✦</span></span>
+        <span class="text-white">Viral Instagram Reels <span class="text-[#ff5722]">✦</span></span>
+        <span class="text-white">YouTube Documentaries <span class="text-[#ff5722]">✦</span></span>
+        <span class="text-white">Sound Design & FX <span class="text-[#ff5722]">✦</span></span>
+        <span class="text-white">Video Editing <span class="text-[#ff5722]">✦</span></span>
+        <span class="text-white">Motion Graphics <span class="text-[#ff5722]">✦</span></span>
+        <span class="text-white">Cinematic Color Grading <span class="text-[#ff5722]">✦</span></span>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 md:py-28 relative">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
+        <div class="rounded-3xl liquid-glass p-6 sm:p-10 md:p-14 relative overflow-hidden border border-white/10">
+          <div class="max-w-3xl">
+            <div class="text-xs font-bold uppercase tracking-widest text-[#ff5722] mb-3 flex items-center gap-2">
+              <span>✦</span>
+              <span>About Me</span>
+            </div>
+            <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-[#f4fbf8] leading-tight">
+              Transforming ideas into high-impact visual stories.
+            </h2>
+            <p class="mt-5 text-sm sm:text-base text-[#a5b9b4] leading-relaxed">
+              I am <strong class="text-white font-semibold">Sachchidanand Gupt</strong>, a creative visual editor and motion graphics artist. I focus on rhythm, pacing, and visual emotion—taking raw footage and shaping it into compelling content that captivates audiences across YouTube, Instagram, and commercial platforms.
+            </p>
+          </div>
+          <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/5">
+              <div class="text-sm font-semibold text-white mb-1">✔ Pacing & Narrative Flow</div>
+              <p class="text-xs text-[#a5b9b4]">Crafting seamless cuts that retain audience attention and build emotional momentum.</p>
+            </div>
+            <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/5">
+              <div class="text-sm font-semibold text-white mb-1">✔ Cinematic Color Grading</div>
+              <p class="text-xs text-[#a5b9b4]">Refined color balance, skin tone correction, and custom film LUTs.</p>
+            </div>
+            <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/5">
+              <div class="text-sm font-semibold text-white mb-1">✔ Dynamic Motion & Titles</div>
+              <p class="text-xs text-[#a5b9b4]">Engaging kinetic typography, title cards, lower thirds, and smooth visual transitions.</p>
+            </div>
+            <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/5">
+              <div class="text-sm font-semibold text-white mb-1">✔ Multi-Platform Delivery</div>
+              <p class="text-xs text-[#a5b9b4]">Optimized high-retention formats for YouTube, Instagram Reels, Shorts, and ads.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Works / Portfolio -->
+    <section id="portfolio" class="py-20 md:py-28 relative">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
+        <div class="mb-10">
+          <div class="text-xs font-bold uppercase tracking-widest text-[#ff5722] mb-2">✦ Selected Works</div>
+          <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-[#f4fbf8]">Featured Projects</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="p-6 sm:p-8 rounded-3xl liquid-glass border border-white/10 hover:border-[#ff5722]/50 transition-all">
+            <span class="text-xs font-semibold text-[#ff8a50] px-3 py-1 rounded-full bg-[#ff5722]/10">Cinematic Reels</span>
+            <h3 class="font-display text-xl sm:text-2xl font-bold text-white mt-4">Voyage of Light — Short Film & Reel</h3>
+            <p class="mt-2 text-xs sm:text-sm text-[#a5b9b4]">Anamorphic color grading, sound design, and emotional dramatic pacing.</p>
+            <div class="mt-4 text-xs text-white/60">Premiere Pro • DaVinci Resolve • 4K</div>
+          </div>
+          <div class="p-6 sm:p-8 rounded-3xl liquid-glass border border-white/10 hover:border-[#ff5722]/50 transition-all">
+            <span class="text-xs font-semibold text-[#ff8a50] px-3 py-1 rounded-full bg-[#ff5722]/10">Motion Graphics</span>
+            <h3 class="font-display text-xl sm:text-2xl font-bold text-white mt-4">Obsidian Pulse — 3D Motion Titles</h3>
+            <p class="mt-2 text-xs sm:text-sm text-[#a5b9b4]">Dynamic light sweeps, physics transitions, and kinetic typography sequences.</p>
+            <div class="mt-4 text-xs text-white/60">After Effects • Photoshop • 60 FPS</div>
+          </div>
+          <div class="p-6 sm:p-8 rounded-3xl liquid-glass border border-white/10 hover:border-[#ff5722]/50 transition-all">
+            <span class="text-xs font-semibold text-[#ff8a50] px-3 py-1 rounded-full bg-[#ff5722]/10">Video Editing</span>
+            <h3 class="font-display text-xl sm:text-2xl font-bold text-white mt-4">High-Retention Episodic YouTube Series</h3>
+            <p class="mt-2 text-xs sm:text-sm text-[#a5b9b4]">Fast-paced storytelling cuts, custom sound FX stems, and lower-third overlays.</p>
+            <div class="mt-4 text-xs text-white/60">Premiere Pro • After Effects</div>
+          </div>
+          <div class="p-6 sm:p-8 rounded-3xl liquid-glass border border-white/10 hover:border-[#ff5722]/50 transition-all">
+            <span class="text-xs font-semibold text-[#ff8a50] px-3 py-1 rounded-full bg-[#ff5722]/10">Graphic Design</span>
+            <h3 class="font-display text-xl sm:text-2xl font-bold text-white mt-4">Editorial Visual Suite & Thumbnails</h3>
+            <p class="mt-2 text-xs sm:text-sm text-[#a5b9b4]">High-converting YouTube thumbnails, cover posters, and social carousels.</p>
+            <div class="mt-4 text-xs text-white/60">Photoshop • Illustrator</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Direct Project Inquiry Hub (Liquid Glass Studio) -->
+    <section id="contact" class="py-20 md:py-28 relative">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full liquid-glass border border-white/20 text-xs font-bold text-white uppercase tracking-widest mb-3.5">
+            <span>✨ Interactive Booking Studio</span>
+          </div>
+          <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white leading-tight">
+            Direct Project <span class="bg-gradient-to-r from-white via-orange-100 to-[#ff5722] bg-clip-text text-transparent">Inquiry Hub</span>
+          </h2>
+          <p class="mt-3 text-sm text-[#a5b9b4]">
+            Select your project specifications below to launch directly to WhatsApp (+91 98932 68841) or Email.
+          </p>
+        </div>
+
+        <div class="rounded-[32px] sm:rounded-[40px] liquid-glass-card border border-white/20 p-6 sm:p-10 md:p-12 relative overflow-hidden shadow-2xl">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 relative z-10 items-start">
+            
+            <!-- Inquiry Form -->
+            <div class="lg:col-span-7 space-y-6">
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-white/90 mb-3">1. Select Desired Service</label>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="service-options">
+                  <div onclick="selectService(this, 'Viral Reels & Shorts')" class="service-chip p-3.5 rounded-2xl border border-[#ff784e] bg-gradient-to-br from-white/[0.15] to-[#ff5722]/20 cursor-pointer shadow-lg shadow-orange-500/20">
+                    <div class="text-xs font-bold text-white">Viral Reels & Shorts</div>
+                    <div class="text-[11px] text-[#a5b9b4]">9:16 high-retention cuts with kinetic typography</div>
+                  </div>
+                  <div onclick="selectService(this, 'YouTube & Documentaries')" class="service-chip p-3.5 rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] cursor-pointer">
+                    <div class="text-xs font-bold text-white">YouTube & Documentaries</div>
+                    <div class="text-[11px] text-[#a5b9b4]">Narrative pacing, sound FX & b-roll assembly</div>
+                  </div>
+                  <div onclick="selectService(this, 'Motion Graphics & Titles')" class="service-chip p-3.5 rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] cursor-pointer">
+                    <div class="text-xs font-bold text-white">Motion Graphics & Titles</div>
+                    <div class="text-[11px] text-[#a5b9b4]">2D/3D kinetic titles, lower-thirds & logo intros</div>
+                  </div>
+                  <div onclick="selectService(this, 'Color Grading & Sound')" class="service-chip p-3.5 rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] cursor-pointer">
+                    <div class="text-xs font-bold text-white">Color Grading & Sound</div>
+                    <div class="text-[11px] text-[#a5b9b4]">Cinematic warm film LUTs & sound design</div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-white/90 mb-3">2. Turnaround & Schedule</label>
+                <div class="flex flex-wrap gap-2.5">
+                  <span onclick="selectTimeline(this, '⚡ Express (24-48h)')" class="timeline-chip px-4 py-2 rounded-full text-xs font-semibold cursor-pointer border bg-white text-black font-bold">⚡ Express (24-48h)</span>
+                  <span onclick="selectTimeline(this, '⏱️ Standard (3-5 Days)')" class="timeline-chip px-4 py-2 rounded-full text-xs font-semibold cursor-pointer border border-white/10 bg-white/[0.04] text-[#a5b9b4]">⏱️ Standard (3-5 Days)</span>
+                  <span onclick="selectTimeline(this, '📅 Dedicated Monthly')" class="timeline-chip px-4 py-2 rounded-full text-xs font-semibold cursor-pointer border border-white/10 bg-white/[0.04] text-[#a5b9b4]">📅 Dedicated Monthly</span>
+                </div>
+              </div>
+
+              <div class="space-y-4">
+                <label class="block text-xs font-bold uppercase tracking-wider text-white/90">3. Your Name & Project Concept</label>
+                <input id="client-name" oninput="updatePreview()" type="text" placeholder="Your Name / Brand" class="w-full px-4 py-3 rounded-xl bg-black/40 border border-white/15 text-white placeholder-white/40 text-sm focus:outline-none focus:border-[#ff784e]" />
+                <textarea id="client-brief" oninput="updatePreview()" rows="3" placeholder="Tell me about your footage style, deadlines, or references..." class="w-full px-4 py-3 rounded-xl bg-black/40 border border-white/15 text-white placeholder-white/40 text-sm focus:outline-none focus:border-[#ff784e] resize-none"></textarea>
+              </div>
+
+              <button onclick="sendToWhatsApp()" class="w-full py-4 px-6 rounded-2xl font-bold text-sm text-[#0a0302] bg-gradient-to-r from-white via-orange-100 to-[#ff5722] hover:shadow-2xl hover:shadow-orange-500/30 transition-all flex items-center justify-center gap-2 cursor-pointer">
+                <span>💬 Send via WhatsApp (+91 98932 68841) ↗</span>
+              </button>
+            </div>
+
+            <!-- Right: Live WhatsApp Card & Direct Links -->
+            <div class="lg:col-span-5 space-y-5">
+              <div class="p-5 rounded-2xl liquid-glass border border-white/20 shadow-xl">
+                <div class="flex items-center justify-between text-xs text-white/80 pb-3 border-b border-white/10 mb-3">
+                  <span class="font-semibold text-white flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    Live WhatsApp Preview
+                  </span>
+                  <span class="text-[11px] text-[#ff8a50] font-mono">Ready to Send</span>
+                </div>
+                <div class="p-3.5 rounded-xl bg-black/50 border border-white/10 text-xs font-mono text-white/90 leading-relaxed space-y-1">
+                  <p class="text-white/60 text-[11px]">// Message payload to +91 98932 68841</p>
+                  <p><span class="text-[#ff784e]">Name:</span> <span id="prev-name">Creator</span></p>
+                  <p><span class="text-[#ff784e]">Service:</span> <span id="prev-service">Viral Reels & Shorts</span></p>
+                  <p><span class="text-[#ff784e]">Timeline:</span> <span id="prev-timeline">⚡ Express (24-48h)</span></p>
+                  <p><span class="text-[#ff784e]">Brief:</span> <span id="prev-brief">Looking forward to collaborating...</span></p>
+                </div>
+              </div>
+
+              <!-- Direct WhatsApp -->
+              <div class="p-4 rounded-2xl liquid-glass-orange border border-[#ff8a50]/40 flex items-center justify-between">
+                <div>
+                  <span class="text-[11px] text-white/80 uppercase font-semibold block">WhatsApp Direct</span>
+                  <span class="text-sm font-bold text-white">+91 98932 68841</span>
+                </div>
+                <a href="https://wa.me/919893268841" target="_blank" class="px-3 py-1.5 rounded-lg bg-[#25D366] text-black font-bold text-xs">Chat Now</a>
+              </div>
+
+              <!-- Direct Email -->
+              <div class="p-4 rounded-2xl liquid-glass border border-white/15 flex items-center justify-between">
+                <div class="min-w-0">
+                  <span class="text-[11px] text-white/80 uppercase font-semibold block">Direct Email</span>
+                  <span class="text-xs font-bold text-white truncate block">sachchidanandgupt9@gmail.com</span>
+                </div>
+                <a href="mailto:sachchidanandgupt9@gmail.com" class="px-3 py-1.5 rounded-lg bg-white/10 text-white text-xs">Email ↗</a>
+              </div>
+
+              <!-- Socials -->
+              <div class="grid grid-cols-2 gap-3">
+                <a href="https://instagram.com/official_vishal_gupt" target="_blank" class="p-3.5 rounded-2xl liquid-glass border border-white/15 flex items-center gap-2 hover:border-[#ff5722]/50">
+                  <div class="text-xs font-bold text-white">Instagram ↗</div>
+                </a>
+                <a href="https://www.facebook.com/share/1RdM53jcmQ/" target="_blank" class="p-3.5 rounded-2xl liquid-glass border border-white/15 flex items-center gap-2 hover:border-[#ff5722]/50">
+                  <div class="text-xs font-bold text-white">Facebook ↗</div>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 bg-[#060504] py-10 text-xs text-[#a5b9b4] text-center">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="font-display font-extrabold text-white text-base">Sachchidanand Gupt</div>
+      <div class="text-[11px] text-white/60 mt-1">Visual Creator • Video Editor • Motion Graphics</div>
+      <div class="mt-4 text-[11px]">© 2026 Sachchidanand Gupt. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- Interactive Scripts -->
+  <script>
+    let currentService = 'Viral Reels & Shorts';
+    let currentTimeline = '⚡ Express (24-48h)';
+
+    function selectService(el, service) {
+      currentService = service;
+      document.querySelectorAll('.service-chip').forEach(c => {
+        c.className = 'service-chip p-3.5 rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] cursor-pointer';
+      });
+      el.className = 'service-chip p-3.5 rounded-2xl border border-[#ff784e] bg-gradient-to-br from-white/[0.15] to-[#ff5722]/20 cursor-pointer shadow-lg shadow-orange-500/20';
+      updatePreview();
+    }
+
+    function selectTimeline(el, timeline) {
+      currentTimeline = timeline;
+      document.querySelectorAll('.timeline-chip').forEach(c => {
+        c.className = 'timeline-chip px-4 py-2 rounded-full text-xs font-semibold cursor-pointer border border-white/10 bg-white/[0.04] text-[#a5b9b4]';
+      });
+      el.className = 'timeline-chip px-4 py-2 rounded-full text-xs font-semibold cursor-pointer border bg-white text-black font-bold shadow-md';
+      updatePreview();
+    }
+
+    function updatePreview() {
+      const name = document.getElementById('client-name').value || 'Creator';
+      const brief = document.getElementById('client-brief').value || 'Looking forward to collaborating...';
+      document.getElementById('prev-name').innerText = name;
+      document.getElementById('prev-service').innerText = currentService;
+      document.getElementById('prev-timeline').innerText = currentTimeline;
+      document.getElementById('prev-brief').innerText = brief;
+    }
+
+    function sendToWhatsApp() {
+      const name = document.getElementById('client-name').value || 'Creator';
+      const brief = document.getElementById('client-brief').value || 'I would like to collaborate with you on this project.';
+      const msg = `Hello Sachchidanand!%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Service:* ${encodeURIComponent(currentService)}%0A*Timeline:* ${encodeURIComponent(currentTimeline)}%0A*Brief:* ${encodeURIComponent(brief)}`;
+      window.open(`https://wa.me/919893268841?text=${msg}`, '_blank');
+    }
+
+    // Background Particle Starlight
+    const canvas = document.getElementById('ambient-canvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      let w = canvas.width = window.innerWidth;
+      let h = canvas.height = window.innerHeight;
+      window.addEventListener('resize', () => {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+      });
+      const particles = Array.from({ length: 30 }, () => ({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        r: Math.random() * 2 + 0.8,
+        vy: -Math.random() * 0.3 - 0.1,
+        alpha: Math.random() * 0.5 + 0.1
+      }));
+      function loop() {
+        ctx.clearRect(0, 0, w, h);
+        particles.forEach(p => {
+          p.y += p.vy;
+          if (p.y < -10) p.y = h + 10;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255, 87, 34, ${p.alpha})`;
+          ctx.fill();
+        });
+        requestAnimationFrame(loop);
+      }
+      loop();
+    }
+  </script>
+</body>
 </html>
